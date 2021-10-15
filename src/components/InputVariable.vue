@@ -1,15 +1,36 @@
 <template>
-<div>
-
-</div>
+  <div>
+    <label class="form-label">{{label}}</label>
+    <div class="input-group mb-3">
+      <input :type="typeData" class="form-control" :required="required" :placeholder="placeholderStyle" :aria-label="label" aria-describedby="basic-addon1">
+    </div>
+  </div>
 </template>
 
 <script>
 export default {
-  name: "InputVariable"
+  name: 'InputVariable',
+  props: {
+    required: {
+      type: Boolean,
+      default: false
+    },
+    label: {
+      type: String,
+      default: null
+    },
+    inputStyle: {
+      type: String,
+      default: null
+    },
+    placeholderStyle: {
+      type: String,
+      default: null
+    },
+    typeData: {
+      type: String,
+      default: null
+    }
+  }
 }
 </script>
-
-<style scoped>
-
-</style>

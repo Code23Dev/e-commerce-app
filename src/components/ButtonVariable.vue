@@ -1,16 +1,21 @@
 <template>
   <div>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    <button type="button" class="btn btn-secondary" :style="buttonStyle">{{buttonText}}</button>
   </div>
 </template>
 
 <script>
 export default {
-  name: "ButtonVariable"
+  name: 'ButtonVariable',
+  props: {
+    buttonText: {
+      type: String,
+      default: null
+    },
+    buttonStyle: {
+      type: String,
+      default: null
+    }
+  }
 }
 </script>
-
-<style scoped>
-
-</style>
