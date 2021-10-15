@@ -1,13 +1,57 @@
 <template>
-<div>
-  Why do we use it?
-  It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
-</div>
+  <div>
+    <div class="container">
+      <div class="col-12">
+        <div class="row">
+          <div class="col-6">
+            img
+          </div>
+          <div class="col-6 p-5">
+            <div class="p-5">
+              <div class="form-padding">
+                <InputVariable
+                    typeData="email"
+                    placeholderStyle="email"
+                />
+                <InputVariable
+                    typeData="password"
+                    placeholderStyle="password"
+                />
+                <p><router-link to="/forget-password" style="text-decoration: none">Şifrenizi mi unutdunuzmu?</router-link></p>
+                <ButtonVariable
+                    buttonText="Daxil ol"
+                    buttonStyle="padding:10px;width:100%"
+                />
+                <p class="mt-3"><router-link to="/sign-up" style="text-decoration: none">Qeydiyyatdan keç</router-link></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
+import ButtonVariable from "../components/ButtonVariable";
+import InputVariable from "../components/InputVariable";
+
 export default {
-  name: "SignInPage"
+  name: 'SignInPage',
+  components: {
+    ButtonVariable,
+    InputVariable
+  },
+  data () {
+    return {
+      routeName: this.$route.path,
+    }
+  },
+  methods: {
+
+  },
+  created () {
+  }
 }
 </script>
 
